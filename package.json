@@ -5,6 +5,8 @@
     "private": true,
     "main": "index.html",
     "scripts": {
+        "build": "echo build",
+        "build:ci": "echo build:ci",
         "deploy": "rimraf -f node_modules/.cache && node deploy.cjs"
     },
     "repository": {

@@ -3,7 +3,6 @@ const ghpages = require("gh-pages");
 ghpages.publish(
     "./",
     {
-        branch: "gh-pages",
         dotfiles: true,
         history: false,
         message: "build: gh pages updated",

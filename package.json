@@ -7,7 +7,7 @@
     "scripts": {
         "build": "echo build",
         "build:ci": "echo build:ci",
-        "deploy": "rimraf -f node_modules/.cache && node deploy.cjs"
+        "deploy": "rimraf node_modules/.cache && node deploy.cjs"
     },
     "repository": {
         "type": "git",

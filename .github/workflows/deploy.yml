@@ -1,7 +1,13 @@
 name: Deploy
 on:
   schedule:
-  - cron: "0 0 * * *"
+    - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   main:

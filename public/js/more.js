@@ -195,6 +195,162 @@ const modes = [
     },
 
     {
+        id: "emoji",
+        name: "Emoji and Unicorns",
+        description: [ {
+            cssClass: "",
+            text: "You can create a beautiful rainbow effect combined with some emoji unicorns. Unicorns already love this. 🦄 "
+        }, {
+            cssClass: "center",
+            text: "🦄 Unicorns loves rainbows! 🦄"
+        } ],
+        fn: function () {
+            const defaults = {
+                spread: 360,
+                ticks: 100,
+                gravity: 0,
+                decay: 0.94,
+                startVelocity: 30,
+            };
+
+            function shoot() {
+                confetti({
+                    ...defaults,
+                    particleCount: 30,
+                    scalar: 1.2,
+                    shapes: [ "circle", "square" ],
+                    colors: [ "#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a" ],
+                });
+
+                confetti({
+                    ...defaults,
+                    particleCount: 20,
+                    scalar: 2,
+                    shapes: [ "text" ],
+                    shapeOptions: {
+                        text: {
+                            value: [ "🦄", "🌈" ]
+                        }
+                    },
+                });
+            }
+
+            setTimeout(shoot, 0);
+            setTimeout(shoot, 100);
+            setTimeout(shoot, 200);
+        }
+    },
+
+    {
+        id: "images",
+        name: "Images",
+        description: [ {
+            cssClass: "",
+            text: "You can create beautiful effects using all your favorite images. Just make sure they're the right size for being used as a confetti shape."
+        }, {
+            cssClass: "center",
+            text: "🍎🥑🍌🍉🍍🍓 Aren't these fruits just the cutest? 🍒🍑🍈🍇🍊🍋"
+        } ],
+        fn: function () {
+            
+            confetti({
+                spread: 360,
+                ticks: 200,
+                gravity: 1,
+                decay: 0.94,
+                startVelocity: 30,
+                particleCount: 100,
+                scalar: 3,
+                shapes: [ "image" ],
+                shapeOptions: {
+                    image: [
+                        {
+                            src: "https://particles.js.org/images/fruits/apple.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/avocado.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/banana.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/berries.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/cherry.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/grapes.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/lemon.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/orange.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/peach.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/pear.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/pepper.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/plum.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/star.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/strawberry.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/watermelon.png",
+                            width: 32,
+                            height: 32
+                        },
+                        {
+                            src: "https://particles.js.org/images/fruits/watermelon_slice.png",
+                            width: 32,
+                            height: 32
+                        }
+                    ]
+                },  
+            });
+        }
+    },
+
+    {
         id: "fireworks",
         name: "Fireworks",
         description: [ {

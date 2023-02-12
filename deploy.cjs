@@ -9,7 +9,7 @@ const ghToken = process.env.GITHUB_TOKEN, gitUser = ghToken ? {
 };
 
 ghpages.publish(
-    "./",
+    "./public",
     {
         repo: ghToken ? `https://git:${ghToken}@github.com/tsparticles/confetti.git` : `https://git:github.com/tsparticles/confetti.git`,
         dotfiles: true,

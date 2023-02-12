@@ -5,8 +5,8 @@
     "private": true,
     "main": "index.html",
     "scripts": {
-        "build": "handlebars confetti-modes.handlebars -f confetti-modes.js -k isCustom",
-        "build:ci": "handlebars confetti-modes.handlebars -f confetti-modes.js -k isCustom",
+        "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
+        "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
         "deploy": "rimraf node_modules/.cache && node deploy.cjs"
     },
     "repository": {

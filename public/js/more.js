@@ -152,6 +152,47 @@ const modes = [
     },
 
     {
+        id: "hearts",
+        name: "Valentine's Day",
+        description: [ {
+            cssClass: "",
+            text: "You can create beautiful Valentine's Day effects with the heart shape. Spread the love with some heart shaped confetti."
+        }, {
+            cssClass: "center",
+            text: "❤️ Happy Valentine's Day! ❤️"
+        } ],
+        fn: function () {
+            const defaults = {
+                spread: 360,
+                ticks: 100,
+                gravity: 0,
+                decay: 0.94,
+                startVelocity: 30,
+                shapes: [ "heart" ],
+                colors: [ "FFC0CB", "FF69B4", "FF1493", "C71585" ],
+            };
+
+            confetti({
+                ...defaults,
+                particleCount: 50,
+                scalar: 2,
+            });
+            
+            confetti({
+                ...defaults,
+                particleCount: 25,
+                scalar: 3,
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 4,
+            });
+        }
+    },
+
+    {
         id: "stars",
         name: "Stars",
         description: [ {

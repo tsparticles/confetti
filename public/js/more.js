@@ -583,6 +583,17 @@ window.onload = function () {
             editor = ace.edit(codeElem);
 
         editor.setTheme(themes[activeTheme]);
+            
+        editor.session.on('changeMode', function(e, session){
+            if ("ace/mode/javascript" === session.getMode().$id) {
+                if (!!session.$worker) {
+                    session.$worker.send("setOptions", [{
+                        "esversion": 9,
+                        "esnext": false,
+                    }]);
+                }
+            }
+        });
 
         editor.session.setMode("ace/mode/javascript");
         editor.session.setUseSoftTabs(true);

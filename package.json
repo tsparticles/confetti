@@ -1,30 +1,30 @@
 {
-    "name": "@tsparticles/confetti-website",
-    "version": "1.6.1",
-    "description": "tsParticles confetti webpage",
-    "private": true,
-    "main": "index.html",
-    "scripts": {
-        "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
-        "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
-        "deploy": "rimraf node_modules/.cache && node deploy.cjs"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/matteobruni/confetti.git"
-    },
-    "author": "Matteo Bruni <matteo.bruni@me.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/matteobruni/confetti/issues"
-    },
-    "homepage": "https://confetti.js.org",
-    "dependencies": {
-        "tsparticles": "^2.10.1"
-    },
-    "devDependencies": {
-        "gh-pages": "^5.0.0",
-        "handlebars": "^4.7.7",
-        "rimraf": "^5.0.1"
-    }
+  "name": "@tsparticles/confetti-website",
+  "version": "1.6.1",
+  "description": "tsParticles confetti webpage",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
+    "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
+    "deploy": "rimraf node_modules/.cache && node deploy.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteobruni/confetti.git"
+  },
+  "author": "Matteo Bruni <matteo.bruni@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteobruni/confetti/issues"
+  },
+  "homepage": "https://confetti.js.org",
+  "dependencies": {
+    "tsparticles": "^2.11.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "handlebars": "^4.7.7",
+    "rimraf": "^5.0.1"
+  }
 }

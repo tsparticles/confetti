@@ -20,7 +20,7 @@
   },
   "homepage": "https://confetti.js.org",
   "dependencies": {
-    "tsparticles": "^2.11.0"
+    "tsparticles": "^2.12.0"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",

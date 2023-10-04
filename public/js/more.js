@@ -549,6 +549,62 @@ const modes = [
   },
 
   {
+    id: "customShapes",
+    name: "Custom Shapes",
+    description: [
+      {
+        cssClass: "",
+        text: "Celebrate some holidays with holiday-appropriate shapes! You can use any SVG path to make a confetti out of it. Go wild!",
+      },
+      {
+        cssClass: "center",
+        text: "🎃🎄💜",
+      },
+    ],
+    fn: function () {
+      var defaults = {
+        scalar: 2,
+        spread: 270,
+        particleCount: 25,
+        origin: { y: 0.4 },
+        startVelocity: 35,
+      };
+
+      confetti({
+        ...defaults,
+        shapes: ["image"],
+        shapeOptions: {
+          image: {
+            src: "https://particles.js.org/images/pumpkin.svg",
+            replaceColor: true,
+            width: 32,
+            height: 40,
+          },
+        },
+        colors: ["#ff9a00", "#ff7400", "#ff4d00"],
+      });
+      confetti({
+        ...defaults,
+        shapes: ["image"],
+        shapeOptions: {
+          image: {
+            src: "https://particles.js.org/images/pine-tree.svg",
+            replaceColor: true,
+            width: 271,
+            height: 351.5,
+          },
+        },
+        colors: ["#8d960f", "#be0f10", "#445404"],
+      });
+      confetti({
+        ...defaults,
+        shapes: ["heart"],
+        colors: ["#f93963", "#a10864", "#ee0b93"],
+      });
+    },
+  },
+
+  {
     id: "custom",
     name: "Custom Canvas",
     description: [

@@ -41,6 +41,10 @@ html, body {
     height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--background-color);
     color: var(--primary-color);

@@ -659,7 +659,7 @@ function getCode(name) {
   return pretty(code);
 }
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
   Array.from(document.querySelectorAll(".html-group")).forEach(function (
     group
   ) {
@@ -732,4 +732,4 @@ window.onload = function () {
 
     editors.push(editor);
   });
-};
+});

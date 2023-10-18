@@ -718,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
     codeElem.style.minHeight = 14 * count + 1 + "px";
     codeElem.style.height = count + "rem";
 
-    button.onclick = function (ev) {
+    button.addEventListener("click", (ev) => {
       // stop mobile browsers from zooming when clicking
       // buttons repeatedly really fast
       ev.preventDefault();
@@ -728,7 +728,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (e) {
         console.error(e);
       }
-    };
+    });
 
     editors.push(editor);
   });

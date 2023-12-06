@@ -287,9 +287,9 @@ const modes = [
           ...defaults,
           particleCount: 20,
           scalar: 2,
-          shapes: ["text"],
+          shapes: ["emoji"],
           shapeOptions: {
-            text: {
+            emoji: {
               value: ["🦄", "🌈"],
             },
           },

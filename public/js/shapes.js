@@ -1,15 +1,15 @@
-import { confettyTypes, updateShapesState } from "./state.js";
+import { confettiTypes, updateShapesState } from "./state.js";
 
 export const initShapes = () => {
   const btnCircle = document.getElementById("btnCircleConfetti");
   const btnSquare = document.getElementById("btnSquareConfetti");
   const btnTriangle = document.getElementById("btnTriangleConfetti");
   const btnPolygon = document.getElementById("btnPolygonConfetti");
-  const btnChar = document.getElementById("btnFontConfetti");
+  const btnEmoji = document.getElementById("btnEmojiConfetti");
   const btnImage = document.getElementById("btnImageConfetti");
 
   const updateCircleBtn = () => {
-    if (confettyTypes.circle) {
+    if (confettiTypes.circle) {
       btnCircle.classList.add("active");
     } else {
       btnCircle.classList.remove("active");
@@ -17,7 +17,7 @@ export const initShapes = () => {
   };
 
   const updateSquareBtn = () => {
-    if (confettyTypes.square) {
+    if (confettiTypes.square) {
       btnSquare.classList.add("active");
     } else {
       btnSquare.classList.remove("active");
@@ -25,7 +25,7 @@ export const initShapes = () => {
   };
 
   const updateTriangleBtn = () => {
-    if (confettyTypes.triangle) {
+    if (confettiTypes.triangle) {
       btnTriangle.classList.add("active");
     } else {
       btnTriangle.classList.remove("active");
@@ -33,23 +33,23 @@ export const initShapes = () => {
   };
 
   const updatePolygonBtn = () => {
-    if (confettyTypes.polygon.enable) {
+    if (confettiTypes.polygon.enable) {
       btnPolygon.classList.add("active");
     } else {
       btnPolygon.classList.remove("active");
     }
   };
 
-  const updateCharBtn = () => {
-    if (confettyTypes.character.enable) {
-      btnChar.classList.add("active");
+  const updateEmojiBtn = () => {
+    if (confettiTypes.emoji.enable) {
+      btnEmoji.classList.add("active");
     } else {
-      btnChar.classList.remove("active");
+      btnEmoji.classList.remove("active");
     }
   };
 
   const updateImageBtn = () => {
-    if (confettyTypes.image.enable) {
+    if (confettiTypes.image.enable) {
       btnImage.classList.add("active");
     } else {
       btnImage.classList.remove("active");
@@ -58,7 +58,7 @@ export const initShapes = () => {
 
   btnCircle.addEventListener("click", () => {
     updateShapesState({
-      circle: !confettyTypes.circle,
+      circle: !confettiTypes.circle,
     });
 
     updateCircleBtn();
@@ -66,7 +66,7 @@ export const initShapes = () => {
 
   btnSquare.addEventListener("click", () => {
     updateShapesState({
-      square: !confettyTypes.square,
+      square: !confettiTypes.square,
     });
 
     updateSquareBtn();
@@ -74,7 +74,7 @@ export const initShapes = () => {
 
   btnTriangle.addEventListener("click", () => {
     updateShapesState({
-      triangle: !confettyTypes.triangle,
+      triangle: !confettiTypes.triangle,
     });
 
     updateTriangleBtn();
@@ -83,27 +83,27 @@ export const initShapes = () => {
   btnPolygon.addEventListener("click", () => {
     updateShapesState({
       polygon: {
-        enable: !confettyTypes.polygon.enable,
+        enable: !confettiTypes.polygon.enable,
       },
     });
 
     updatePolygonBtn();
   });
 
-  btnChar.addEventListener("click", () => {
+  btnEmoji.addEventListener("click", () => {
     updateShapesState({
-      character: {
-        enable: !confettyTypes.character.enable,
+      emoji: {
+        enable: !confettiTypes.emoji.enable,
       },
     });
 
-    updateCharBtn();
+    updateEmojiBtn();
   });
 
   btnImage.addEventListener("click", () => {
     updateShapesState({
       image: {
-        enable: !confettyTypes.image.enable,
+        enable: !confettiTypes.image.enable,
       },
     });
 
@@ -114,6 +114,6 @@ export const initShapes = () => {
   updateSquareBtn();
   updateTriangleBtn();
   updatePolygonBtn();
-  updateCharBtn();
+  updateEmojiBtn();
   updateImageBtn();
 };

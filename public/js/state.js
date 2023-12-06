@@ -11,7 +11,7 @@ export const appState = {
   code: false,
 };
 
-export const confettyTypes = {
+export const confettiTypes = {
   circle: true,
   square: true,
   triangle: false,
@@ -26,9 +26,9 @@ export const confettyTypes = {
       },
     ],
   },
-  character: {
+  emoji: {
     enable: false,
-    text: ["💩", "🤡", "🍀", "🍙", "🦄", "⭐️"],
+    value: ["💩", "🤡", "🍀", "🍙", "🦄", "⭐️"],
   },
   image: {
     enable: false,
@@ -185,33 +185,29 @@ export const getParticlesShapes = () => {
   const type = [];
   const options = {};
 
-  if (confettyTypes.circle) {
+  if (confettiTypes.circle) {
     type.push("circle");
   }
 
-  if (confettyTypes.square) {
+  if (confettiTypes.square) {
     type.push("square");
   }
 
-  if (confettyTypes.triangle) {
+  if (confettiTypes.triangle) {
     type.push("triangle");
   }
 
-  if (confettyTypes.polygon.enable) {
+  if (confettiTypes.polygon.enable) {
     type.push("polygon");
 
-    options.polygon = confettyTypes.polygon.shapes;
+    options.polygon = confettiTypes.polygon.shapes;
   }
 
-  if (confettyTypes.character.enable) {
-    type.push("character");
+  if (confettiTypes.emoji.enable) {
+    type.push("emoji");
 
-    if (!options.character) {
-      options.character = {
-        fill: true,
-        font: "Verdana",
-        style: "",
-        weight: 400,
+    if (!options.emoji) {
+      options.emoji = {
         particles: {
           size: {
             value: 8,
@@ -220,13 +216,13 @@ export const getParticlesShapes = () => {
       };
     }
 
-    options.character.value = confettyTypes.character.text;
+    options.emoji.value = confettiTypes.emoji.value;
   }
 
-  if (confettyTypes.image.enable) {
+  if (confettiTypes.image.enable) {
     type.push("image");
 
-    options.image = confettyTypes.image.sources.map((t) => {
+    options.image = confettiTypes.image.sources.map((t) => {
       return {
         ...t,
         particles: {
@@ -245,7 +241,7 @@ export const getParticlesShapes = () => {
 };
 
 export const updateShapesState = (newShapeState) => {
-  _.merge(confettyTypes, newShapeState);
+  _.merge(confettiTypes, newShapeState);
 
   updateAnimationState(appState);
 };

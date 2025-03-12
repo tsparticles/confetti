@@ -281,16 +281,6 @@ footer a:hover {
     }
 }
 
-#ads {
-    max-width: 330px;
-    height: 100px;
-    z-index: 0;
-    background: #232323;
-    border-bottom: 1px solid #343a40;
-    margin: 0 auto;
-    color: #000;
-}
-
 .dh-banner {
     margin-top: 64px !important;
 }

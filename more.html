@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="tsParticles - Easily create highly customizable confetti, particles and fireworks animations and use them as animated backgrounds for your website. Ready to use components available for React, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno."
+    />
+    <meta name="author" content="Matteo Bruni" />
+    <meta
+      name="keywords"
+      content="html css javascript typescript particles js ts jsx tsx canvas confetti fireworks animations react vue angular svelte libraries how to create add"
+    />
+
+    <meta name="theme-color" content="#393939" />
+
+    <title>
+      tsParticles 🎉🎊 | JavaScript Confetti, Particles and Fireworks animations
+      for your website
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/more.css" rel="stylesheet" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-80MY3TZM79"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-80MY3TZM79");
+    </script>
+  </head>
+  <body>
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="code" viewBox="0 0 14 16">
+          <!-- Icon from GitHub Octicons - https://github.com/primer/octicons/ -->
+          <path
+            d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3 9.5 3ZM4.5 3L0 8 4.5 13 6 11.5 2.5 8 6 4.5 4.5 3 4.5 3Z"
+          />
+        </symbol>
+
+        <symbol id="heart" viewBox="0 0 12 16">
+          <!-- Icon from GitHub Octicons - https://github.com/primer/octicons/ -->
+          <path
+            d="M11.2 3C10.68 2.37 9.95 2.05 9 2 8.03 2 7.31 2.42 6.8 3 6.29 3.58 6.02 3.92 6 4 5.98 3.92 5.72 3.58 5.2 3 4.68 2.42 4.03 2 3 2 2.05 2.05 1.31 2.38 0.8 3 0.28 3.61 0.02 4.28 0 5 0 5.52 0.09 6.52 0.67 7.67 1.25 8.82 3.01 10.61 6 13 8.98 10.61 10.77 8.83 11.34 7.67 11.91 6.51 12 5.5 12 5 11.98 4.28 11.72 3.61 11.2 2.98L11.2 3Z"
+          />
+        </symbol>
+
+        <symbol id="run" viewBox="0 0 10 10">
+          <path d="M2 2L8 6L2 10" />
+        </symbol>
+
+        <symbol id="octo" viewBox="0 0 16 16">
+          <!-- Icon from GitHub Octicons - https://github.com/primer/octicons/ -->
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header>
+      <button id="themeToggle" title="Switch Theme" class="theme"></button>
+      <a
+        class="github-icon"
+        title="Visit on GitHub"
+        href="https://github.com/matteobruni/tsparticles"
+        aria-label="View source on Github"
+      >
+        <svg class="icon">
+          <use xlink:href="#octo"></use>
+        </svg>
+      </a>
+    </header>
+
+    <h1>tsParticles Confetti</h1>
+
+    <div>
+      <div class="container">
+        <div class="html-group">
+          <div class="flex-rows">
+            <div class="left">
+              <h2><a href="#usage" id="usage" class="anchor">Usage</a></h2>
+            </div>
+            <div class="description">
+              <p>
+                First of all include the script in your page, only if using in
+                plain HTML/JS pages:
+              </p>
+            </div>
+          </div>
+          <div class="editor">&lt;script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"&gt;&lt;/script&gt;</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="confetti-modes"></div>
+
+    <footer>
+      <a href="https://github.com/tsparticles">
+        <span class="icon">
+          <svg class="icon"><use xlink:href="#code"></use></svg>
+        </span>
+        <span> with </span>
+        <span class="icon">
+          <svg class="icon"><use xlink:href="#heart"></use></svg>
+        </span>
+        <span> by <b>tsParticles</b></span>
+      </a>
+    </footer>
+
+    <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/ace-builds@1.37.5/src-min-noconflict/ace.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1784552607103901"
+            crossorigin="anonymous"></script>
+    <script src="js/confetti-modes.js"></script>
+    <script src="js/more.js"></script>
+  </body>
+</html>

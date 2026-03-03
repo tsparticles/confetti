@@ -13,7 +13,7 @@ Linting
 Notes
 
 - The generated file `public/js/confetti-modes.js` is ignored by ESLint via `eslint.config.cjs` because it is output from Handlebars templates. Keep generated files excluded from linting to avoid false positives.
-Naming
+  Naming
 
 - Files use kebab/camel style depending on context (e.g. `main.js`, `confetti-modes.handlebars`). Keep to consistent kebab-case for filenames.
 
@@ -36,3 +36,12 @@ Useful paths
 - `deploy.cjs` — build/deploy scripts
 - `package.json` — add lint/format scripts here
  - `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
+
+Pre-commit hooks
+
+- The project uses `husky` + `lint-staged` to run formatting and lint fixes before commits.
+- Pre-commit hook runs: `pnpm run format`, `pnpm run lint:fix`, then `pnpm run lint` (commit will fail if ESLint reports errors).
+- `lint-staged` targets `public/js/**/*.js` (runs `lint:fix` + `prettier --write`) and formats changed files of other types.
+- To enable hooks locally run `pnpm install` (the `prepare` script runs `husky install`).
+
+- `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks

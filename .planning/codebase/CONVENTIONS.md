@@ -28,14 +28,14 @@ Documentation
 Recommended additions
 
 1. Keep CI green: ensure contributors run `pnpm install` and `npm run lint` locally before pushing.
-2. Document Node.js engine in `package.json` `engines` field if CI requires a specific runtime (recommended: Node 18+).
+2. The repository now sets `"engines": { "node": ">=20" }` in `package.json`. CI workflows should use a Node LTS release — check `.github/workflows/*.yml` for the exact `node-version` used by each job.
 
 Useful paths
 
 - `public/js/` — runtime code to standardize
 - `deploy.cjs` — build/deploy scripts
 - `package.json` — add lint/format scripts here
- - `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
+
 
 Pre-commit hooks
 
@@ -44,4 +44,6 @@ Pre-commit hooks
 - `lint-staged` targets `public/js/**/*.js` (runs `lint:fix` + `prettier --write`) and formats changed files of other types.
 - To enable hooks locally run `pnpm install` (the `prepare` script runs `husky install`).
 
-- `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
+ - `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
+
+Note: CI workflows use different `node-version` values in their YAML files (e.g. some jobs list `'16'`, lint job lists `'18'`). The repository `engines` requires Node >=20; ensure CI runners are configured to a compatible LTS.

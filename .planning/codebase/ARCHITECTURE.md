@@ -35,6 +35,22 @@ Observations
 - Clear separation between build-time templates and runtime static assets.
 - Consider adding source JS (ES modules) if future development introduces complex client-side logic; currently runtime JS appears to be plain concatenated files in `public/js/`.
 
+Suggestions for migrating to a source-based workflow
+
+- Introduce a `src/` directory for authoring ES modules (e.g. `src/index.js`, `src/modes/*.js`) and move hand-authored logic out of `public/js/`.
+- Use a fast bundler (esbuild) to bundle and minify modules into `public/js/` as part of the build step. Example `package.json` scripts:
+
+  ```json
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --minify --outfile=public/js/main.js",
+    "build:ci": "npm run build"
+  }
+  ```
+
+- Keep `confetti-modes.handlebars` as the source for generated modes; consider generating `src/modes.js` from the template if modes evolve programmatically.
+- Add source maps for easier debugging in development: `esbuild --sourcemap` or use `--dev` options for your chosen bundler.
+
+
 Useful paths
 
 - `public/index.html`

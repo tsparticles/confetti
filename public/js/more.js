@@ -55,7 +55,7 @@ const updateTheme = function (step) {
 
 updateTheme(currentStep);
 
-document.getElementById('themeToggle').addEventListener('click', function (event) {
+document.getElementById('themeToggle').addEventListener('click', function () {
   updateTheme(++currentStep % 3);
 });
 
@@ -675,10 +675,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('confetti-modes').innerHTML = template({ modes });
 
   Array.from(document.querySelectorAll('.group')).forEach(function (group) {
-    const name = group.getAttribute('data-name'),
-      button = group.querySelector('.run'),
-      codeElem = group.querySelector('.editor'),
-      editor = ace.edit(codeElem);
+      const name = group.getAttribute('data-name'),
+        button = group.querySelector('.run'),
+        codeElem = group.querySelector('.editor'),
+        editor = ace.edit(codeElem);
 
     editor.setTheme(themes[activeTheme]);
 
@@ -709,12 +709,14 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', (ev) => {
       // stop mobile browsers from zooming when clicking
       // buttons repeatedly really fast
-      ev.preventDefault();
+      if (ev && typeof ev.preventDefault === 'function') ev.preventDefault();
 
       try {
+         
         eval(editor.getValue());
-      } catch (e) {
-        console.error(e);
+      } catch (err) {
+        /* swallow runtime errors in demo editors; keep console output for debugging */
+        console.error(err);
       }
     });
 

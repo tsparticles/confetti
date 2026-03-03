@@ -4,8 +4,7 @@ tsParticles official confetti website
 
 <https://confetti.js.org>
 
-Development
------------
+## Development
 
 Install dependencies (uses pnpm):
 
@@ -21,13 +20,11 @@ Common commands:
 - `pnpm run lint:fix` — run ESLint with `--fix` on `public/js`
 - `pnpm run format` — run Prettier to format the repository
 
-CI
---
+## CI
 
 The repository includes a GitHub Actions workflow `.github/workflows/lint.yml` that runs `pnpm install`, `pnpm run lint`, and `pnpm run format:check` on pushes and PRs. ESLint treats certain rules as errors (e.g. `no-unused-vars`) while warnings are left permissive.
 
-Contributing
-------------
+## Contributing
 
 Quick checklist for contributors:
 
@@ -43,3 +40,25 @@ Notes:
 
 - Generated files (e.g. `public/js/confetti-modes.js`) are ignored by ESLint and should not be edited directly; update the source `confetti-modes.handlebars` and run the build.
 - Maintain code style by running `pnpm run format` and `pnpm run lint` locally.
+
+## Node version
+
+This project requires Node.js >= 18. We recommend using `nvm` to manage Node versions:
+
+```bash
+nvm install 18
+nvm use 18
+```
+
+After switching Node versions, run `pnpm install` to ensure dependencies are installed for the correct environment.
+
+## Husky & local hooks
+
+Husky is used to run pre-commit hooks that format code and run ESLint auto-fixes. To enable hooks locally, simply run:
+
+```bash
+pnpm install
+# or if hooks are not installed: pnpm dlx husky install
+```
+
+If a pre-commit hook blocks your commit and you need to bypass it for an emergency, you can use `git commit --no-verify`, but avoid doing this routinely.

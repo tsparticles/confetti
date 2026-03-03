@@ -4,6 +4,9 @@
   "description": "tsParticles confetti webpage",
   "private": true,
   "main": "index.html",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
     "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",

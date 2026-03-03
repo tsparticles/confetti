@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.html",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",

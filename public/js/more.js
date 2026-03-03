@@ -651,8 +651,7 @@ function getCode(name) {
 
 document.addEventListener('DOMContentLoaded', () => {
   Array.from(document.querySelectorAll('.html-group')).forEach(function (group) {
-    const name = group.getAttribute('data-name'),
-      codeElem = group.querySelector('.editor'),
+    const codeElem = group.querySelector('.editor'),
       editor = ace.edit(codeElem);
 
     editor.setTheme(themes[activeTheme]);
@@ -675,10 +674,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('confetti-modes').innerHTML = template({ modes });
 
   Array.from(document.querySelectorAll('.group')).forEach(function (group) {
-      const name = group.getAttribute('data-name'),
-        button = group.querySelector('.run'),
-        codeElem = group.querySelector('.editor'),
-        editor = ace.edit(codeElem);
+    const button = group.querySelector('.run'),
+      codeElem = group.querySelector('.editor'),
+      editor = ace.edit(codeElem);
 
     editor.setTheme(themes[activeTheme]);
 
@@ -712,7 +710,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (ev && typeof ev.preventDefault === 'function') ev.preventDefault();
 
       try {
-         
         eval(editor.getValue());
       } catch (err) {
         /* swallow runtime errors in demo editors; keep console output for debugging */

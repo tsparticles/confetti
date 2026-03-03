@@ -10,7 +10,8 @@
     "deploy": "rimraf node_modules/.cache && node deploy.cjs",
     "lint": "eslint . --ext .js --ignore-path .eslintignore",
     "lint:fix": "eslint . --ext .js --fix --ignore-path .eslintignore",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",

@@ -50,7 +50,6 @@ Suggestions for migrating to a source-based workflow
 - Keep `confetti-modes.handlebars` as the source for generated modes; consider generating `src/modes.js` from the template if modes evolve programmatically.
 - Add source maps for easier debugging in development: `esbuild --sourcemap` or use `--dev` options for your chosen bundler.
 
-
 Useful paths
 
 - `public/index.html`

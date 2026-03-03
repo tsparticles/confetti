@@ -36,7 +36,6 @@ Useful paths
 - `deploy.cjs` — build/deploy scripts
 - `package.json` — add lint/format scripts here
 
-
 Pre-commit hooks
 
 - The project uses `husky` + `lint-staged` to run formatting and lint fixes before commits.
@@ -44,6 +43,6 @@ Pre-commit hooks
 - `lint-staged` targets `public/js/**/*.js` (runs `lint:fix` + `prettier --write`) and formats changed files of other types.
 - To enable hooks locally run `pnpm install` (the `prepare` script runs `husky install`).
 
- - `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
+- `.prettierrc`, `eslint.config.cjs`, `.github/workflows/lint.yml` — added to repo to enforce style and CI checks
 
 Note: CI workflows use different `node-version` values in their YAML files (e.g. some jobs list `'16'`, lint job lists `'18'`). The repository `engines` requires Node >=20; ensure CI runners are configured to a compatible LTS.

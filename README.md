@@ -25,3 +25,21 @@ CI
 --
 
 The repository includes a GitHub Actions workflow `.github/workflows/lint.yml` that runs `pnpm install`, `pnpm run lint`, and `pnpm run format:check` on pushes and PRs. ESLint treats certain rules as errors (e.g. `no-unused-vars`) while warnings are left permissive.
+
+Contributing
+------------
+
+Quick checklist for contributors:
+
+- Fork the repo and create a feature branch: `git checkout -b feat/your-change`
+- Install dependencies: `pnpm install`
+- Before committing run:
+  - `pnpm run format` to apply Prettier formatting
+  - `pnpm run lint` to run ESLint (fix issues with `pnpm run lint:fix`)
+- Commit changes with a clear message and push your branch
+- Open a Pull Request describing the change and linking relevant issues
+
+Notes:
+
+- Generated files (e.g. `public/js/confetti-modes.js`) are ignored by ESLint and should not be edited directly; update the source `confetti-modes.handlebars` and run the build.
+- Maintain code style by running `pnpm run format` and `pnpm run lint` locally.

@@ -43,11 +43,11 @@ Notes:
 
 ## Node version
 
-This project requires Node.js >= 18. We recommend using `nvm` to manage Node versions:
+This project requires a Node.js LTS release. We recommend using `nvm` to manage Node versions and to install the current LTS:
 
 ```bash
-nvm install 18
-nvm use 18
+nvm install --lts
+nvm use --lts
 ```
 
 After switching Node versions, run `pnpm install` to ensure dependencies are installed for the correct environment.

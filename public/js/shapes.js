@@ -1,62 +1,62 @@
-import { confettiTypes, updateShapesState } from "./state.js";
+import { confettiTypes, updateShapesState } from './state.js';
 
 export const initShapes = () => {
-  const btnCircle = document.getElementById("btnCircleConfetti");
-  const btnSquare = document.getElementById("btnSquareConfetti");
-  const btnTriangle = document.getElementById("btnTriangleConfetti");
-  const btnPolygon = document.getElementById("btnPolygonConfetti");
-  const btnEmoji = document.getElementById("btnEmojiConfetti");
-  const btnImage = document.getElementById("btnImageConfetti");
+  const btnCircle = document.getElementById('btnCircleConfetti');
+  const btnSquare = document.getElementById('btnSquareConfetti');
+  const btnTriangle = document.getElementById('btnTriangleConfetti');
+  const btnPolygon = document.getElementById('btnPolygonConfetti');
+  const btnEmoji = document.getElementById('btnEmojiConfetti');
+  const btnImage = document.getElementById('btnImageConfetti');
 
   const updateCircleBtn = () => {
     if (confettiTypes.circle) {
-      btnCircle.classList.add("active");
+      btnCircle.classList.add('active');
     } else {
-      btnCircle.classList.remove("active");
+      btnCircle.classList.remove('active');
     }
   };
 
   const updateSquareBtn = () => {
     if (confettiTypes.square) {
-      btnSquare.classList.add("active");
+      btnSquare.classList.add('active');
     } else {
-      btnSquare.classList.remove("active");
+      btnSquare.classList.remove('active');
     }
   };
 
   const updateTriangleBtn = () => {
     if (confettiTypes.triangle) {
-      btnTriangle.classList.add("active");
+      btnTriangle.classList.add('active');
     } else {
-      btnTriangle.classList.remove("active");
+      btnTriangle.classList.remove('active');
     }
   };
 
   const updatePolygonBtn = () => {
     if (confettiTypes.polygon.enable) {
-      btnPolygon.classList.add("active");
+      btnPolygon.classList.add('active');
     } else {
-      btnPolygon.classList.remove("active");
+      btnPolygon.classList.remove('active');
     }
   };
 
   const updateEmojiBtn = () => {
     if (confettiTypes.emoji.enable) {
-      btnEmoji.classList.add("active");
+      btnEmoji.classList.add('active');
     } else {
-      btnEmoji.classList.remove("active");
+      btnEmoji.classList.remove('active');
     }
   };
 
   const updateImageBtn = () => {
     if (confettiTypes.image.enable) {
-      btnImage.classList.add("active");
+      btnImage.classList.add('active');
     } else {
-      btnImage.classList.remove("active");
+      btnImage.classList.remove('active');
     }
   };
 
-  btnCircle.addEventListener("click", () => {
+  btnCircle.addEventListener('click', () => {
     updateShapesState({
       circle: !confettiTypes.circle,
     });
@@ -64,7 +64,7 @@ export const initShapes = () => {
     updateCircleBtn();
   });
 
-  btnSquare.addEventListener("click", () => {
+  btnSquare.addEventListener('click', () => {
     updateShapesState({
       square: !confettiTypes.square,
     });
@@ -72,7 +72,7 @@ export const initShapes = () => {
     updateSquareBtn();
   });
 
-  btnTriangle.addEventListener("click", () => {
+  btnTriangle.addEventListener('click', () => {
     updateShapesState({
       triangle: !confettiTypes.triangle,
     });
@@ -80,7 +80,7 @@ export const initShapes = () => {
     updateTriangleBtn();
   });
 
-  btnPolygon.addEventListener("click", () => {
+  btnPolygon.addEventListener('click', () => {
     updateShapesState({
       polygon: {
         enable: !confettiTypes.polygon.enable,
@@ -90,7 +90,7 @@ export const initShapes = () => {
     updatePolygonBtn();
   });
 
-  btnEmoji.addEventListener("click", () => {
+  btnEmoji.addEventListener('click', () => {
     updateShapesState({
       emoji: {
         enable: !confettiTypes.emoji.enable,
@@ -100,7 +100,7 @@ export const initShapes = () => {
     updateEmojiBtn();
   });
 
-  btnImage.addEventListener("click", () => {
+  btnImage.addEventListener('click', () => {
     updateShapesState({
       image: {
         enable: !confettiTypes.image.enable,

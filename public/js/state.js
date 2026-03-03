@@ -28,88 +28,88 @@ export const confettiTypes = {
   },
   emoji: {
     enable: false,
-    value: ["💩", "🤡", "🍀", "🍙", "🦄", "⭐️"],
+    value: ['💩', '🤡', '🍀', '🍙', '🦄', '⭐️'],
   },
   image: {
     enable: false,
     sources: [
       {
-        src: "https://particles.js.org/images/fruits/apple.png",
+        src: 'https://particles.js.org/images/fruits/apple.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/avocado.png",
+        src: 'https://particles.js.org/images/fruits/avocado.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/banana.png",
+        src: 'https://particles.js.org/images/fruits/banana.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/berries.png",
+        src: 'https://particles.js.org/images/fruits/berries.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/cherry.png",
+        src: 'https://particles.js.org/images/fruits/cherry.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/grapes.png",
+        src: 'https://particles.js.org/images/fruits/grapes.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/lemon.png",
+        src: 'https://particles.js.org/images/fruits/lemon.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/orange.png",
+        src: 'https://particles.js.org/images/fruits/orange.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/peach.png",
+        src: 'https://particles.js.org/images/fruits/peach.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/pear.png",
+        src: 'https://particles.js.org/images/fruits/pear.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/pepper.png",
+        src: 'https://particles.js.org/images/fruits/pepper.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/plum.png",
+        src: 'https://particles.js.org/images/fruits/plum.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/star.png",
+        src: 'https://particles.js.org/images/fruits/star.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/strawberry.png",
+        src: 'https://particles.js.org/images/fruits/strawberry.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/watermelon.png",
+        src: 'https://particles.js.org/images/fruits/watermelon.png',
         width: 32,
         height: 32,
       },
       {
-        src: "https://particles.js.org/images/fruits/watermelon_slice.png",
+        src: 'https://particles.js.org/images/fruits/watermelon_slice.png',
         width: 32,
         height: 32,
       },
@@ -122,11 +122,7 @@ export const animationStateButtons = [];
 export const updateAnimationState = (newAnimationState) => {
   _.merge(animationState, newAnimationState);
 
-  if (
-    Object.values(animationState).every((t) =>
-      typeof t === "boolean" ? !t : true
-    )
-  ) {
+  if (Object.values(animationState).every((t) => (typeof t === 'boolean' ? !t : true))) {
     const container = tsParticles.domItem(0);
 
     if (container) {
@@ -138,9 +134,9 @@ export const updateAnimationState = (newAnimationState) => {
     stateButton.toggle(stateButton.status());
 
     if (stateButton.status()) {
-      stateButton.button.classList.add("active");
+      stateButton.button.classList.add('active');
     } else {
-      stateButton.button.classList.remove("active");
+      stateButton.button.classList.remove('active');
     }
   }
 
@@ -166,17 +162,17 @@ export const updateAnimationState = (newAnimationState) => {
 export const updateState = (newState) => {
   _.merge(appState, newState);
 
-  const codeEl = document.getElementById("code");
+  const codeEl = document.getElementById('code');
 
   if (appState.code) {
-    codeEl.classList.remove("d-none");
+    codeEl.classList.remove('d-none');
   } else {
-    codeEl.classList.add("d-none");
+    codeEl.classList.add('d-none');
   }
 };
 
 export const updateCode = (newCode) => {
-  const codeEl = document.getElementById("code-text");
+  const codeEl = document.getElementById('code-text');
 
   codeEl.innerHTML = newCode;
 };
@@ -186,25 +182,25 @@ export const getParticlesShapes = () => {
   const options = {};
 
   if (confettiTypes.circle) {
-    type.push("circle");
+    type.push('circle');
   }
 
   if (confettiTypes.square) {
-    type.push("square");
+    type.push('square');
   }
 
   if (confettiTypes.triangle) {
-    type.push("triangle");
+    type.push('triangle');
   }
 
   if (confettiTypes.polygon.enable) {
-    type.push("polygon");
+    type.push('polygon');
 
     options.polygon = confettiTypes.polygon.shapes;
   }
 
   if (confettiTypes.emoji.enable) {
-    type.push("emoji");
+    type.push('emoji');
 
     if (!options.emoji) {
       options.emoji = {
@@ -220,7 +216,7 @@ export const getParticlesShapes = () => {
   }
 
   if (confettiTypes.image.enable) {
-    type.push("image");
+    type.push('image');
 
     options.image = confettiTypes.image.sources.map((t) => {
       return {

@@ -8,8 +8,8 @@
     "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
     "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
     "deploy": "rimraf node_modules/.cache && node deploy.cjs",
-    "lint": "eslint . --ext .js --ignore-path .eslintignore",
-    "lint:fix": "eslint . --ext .js --fix --ignore-path .eslintignore",
+    "lint": "eslint public/js --ext .js",
+    "lint:fix": "eslint public/js --ext .js --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

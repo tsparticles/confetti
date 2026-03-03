@@ -23,7 +23,7 @@ jobs:
           pnpm install
       - name: Run eslint
         run: |
-          pnpm run lint || true
+          pnpm run lint
       - name: Check formatting
         run: |
           pnpm run format:check

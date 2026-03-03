@@ -7,7 +7,10 @@
   "scripts": {
     "build": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
     "build:ci": "handlebars confetti-modes.handlebars -f public/js/confetti-modes.js -k isCustom",
-    "deploy": "rimraf node_modules/.cache && node deploy.cjs"
+    "deploy": "rimraf node_modules/.cache && node deploy.cjs",
+    "lint": "eslint . --ext .js --ignore-path .eslintignore",
+    "lint:fix": "eslint . --ext .js --fix --ignore-path .eslintignore",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,10 @@
   "devDependencies": {
     "gh-pages": "^6.1.1",
     "handlebars": "^4.7.8",
-    "rimraf": "^6.0.0"
+    "rimraf": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^4.0.0"
   }
 }

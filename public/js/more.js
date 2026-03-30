@@ -674,7 +674,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('confetti-modes').innerHTML = template({ modes });
 
   Array.from(document.querySelectorAll('.group')).forEach(function (group) {
-    const button = group.querySelector('.run'),
+    const name = group.getAttribute('data-name'),
+      button = group.querySelector('.run'),
       codeElem = group.querySelector('.editor'),
       editor = ace.edit(codeElem);
 

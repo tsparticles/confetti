@@ -1,4 +1,4 @@
-const ghpages = require('gh-pages');
+import ghpages from 'gh-pages';
 
 const ghToken = process.env.GITHUB_TOKEN,
   gitUser = ghToken
@@ -22,7 +22,7 @@ ghpages.publish(
     message: 'build: gh pages updated',
     user: gitUser,
   },
-  function (publishErr) {
+  (publishErr) => {
     if (!publishErr) {
       console.log('Website published successfully');
     } else {

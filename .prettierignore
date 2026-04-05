@@ -1,1 +1,8 @@
 public/js/confetti-modes.js
+pnpm-lock.yaml
+package.json
+.github
+.planning
+.prettierrc
+eslint.config.js
+renovate.json

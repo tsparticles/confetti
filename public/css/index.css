@@ -263,6 +263,97 @@ footer a:hover {
   opacity: 1;
 }
 
+.cookie-preferences-button {
+  margin: 0.5rem 0 1rem;
+  background: transparent;
+  border: 1px solid var(--inner-color);
+  color: var(--inner-color);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+}
+
+.cookie-policy-link {
+  display: inline-block;
+  margin: 0 0 1rem;
+  color: var(--inner-color);
+  opacity: 0.85;
+}
+
+.cookie-policy-link:hover {
+  opacity: 1;
+}
+
+.cookie-consent-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+.cookie-consent-content {
+  padding: 1rem;
+}
+
+.cookie-consent-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+
+.cookie-consent-text {
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.cookie-consent-link {
+  color: inherit;
+}
+
+.cookie-consent-option {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.cookie-consent-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-consent-actions button {
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+.cookie-consent-actions .cookie-consent-primary {
+  background: var(--primary-color);
+  color: var(--background-color);
+  border-color: transparent;
+}
+
+.policy-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.policy-container a {
+  color: var(--primary-color);
+}
+
 .custom-canvas {
   margin-top: 30px;
   background: var(--secondary-color);
@@ -281,6 +372,11 @@ footer a:hover {
   .description {
     width: 66%;
     padding: 0 0 0 1em;
+  }
+
+  .cookie-consent-banner {
+    left: auto;
+    width: min(36rem, calc(100% - 2rem));
   }
 }
 
